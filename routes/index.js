@@ -24,7 +24,7 @@ router.post('/movie/add', uploadCloud.single('photo'), (req, res, next) => {
   const imgName = req.file.originalname;
   const newMovie = new Movie({title, description, imgPath, imgName})
   newMovie.save()
-  .then(movie => {
+  .then(Movie => {
     res.redirect('/')
   })
   .catch(error => {
